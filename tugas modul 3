@@ -1,0 +1,23 @@
+nama   = 'Hanifa Aulia Kamal'
+nim    = 2310433024
+shift  = '2'
+print('Nama     : '+ nama)
+print('NIM      : ', nim)
+print('Shift    : '+ shift)
+
+def fibonacci(n):
+    fib = [1, 1]
+    for i in range(2, n):
+        fib.append(fib[i-1] + fib[i-2])
+    return fib
+
+while True:
+    n = int(input("Masukkan nilai n (3 <= n <= 199, n not in (100,109)): "))
+    if n < 3 or n > 199 or n == 100 or n == 109:
+        print("Nilai n tidak memenuhi ketentuan. Silakan coba lagi.")
+    else:
+        fib_sequence = fibonacci(n)
+        fib_sum = sum(fib_sequence)
+        print(f"Bilangan Fibonacci ke-{n}: {fib_sequence[-1]}")
+        print(f"Jumlah dari f_1, f_2, ..., f_{n}: {fib_sum}")
+        break
