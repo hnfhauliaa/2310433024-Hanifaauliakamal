@@ -1,0 +1,20 @@
+nama   = 'Hanifa Aulia Kamal'
+nim    = 2310433024
+shift  = '2'
+print('Nama     : '+ nama)
+print('NIM      : ', nim)
+print('Shift    : '+ shift)
+
+vokal = ['a','i','u','e','o']
+kalimat = input ()
+new_kalimat =[]
+
+for kata in kalimat : 
+    new_kata = kata 
+    for huruf in kata :
+        if huruf in vokal :
+            new_kata = new_kata.replace(huruf, 'i')
+        new_kalimat += new_kata 
+    
+kalimat_akhir = " ".join(new_kalimat)
+print(kalimat_akhir)
