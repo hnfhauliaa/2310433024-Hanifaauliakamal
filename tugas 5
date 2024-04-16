@@ -1,0 +1,49 @@
+nama   = 'Hanifa Aulia Kamal'
+nim    = 2310433024
+shift  = '2'
+print('Nama     : '+ nama)
+print('NIM      : ', nim)
+print('Shift    : '+ shift)
+
+import math
+
+pilihan = 'Y'
+while pilihan.upper() == 'Y':
+    print("|     Tabel Fungsi               |")
+    print("|f(x) = 3x^2 + 7x - 2 , x>=0     |")
+    print("|f(x) = 2x^2 - 5x - 4 , x< 0     |")
+    print("|g(x) = f(x)^2-sqrt(f(x))        |")
+    print("|h(x) = f(x) * g(x)              |")
+    
+    n = int(input("Banyak data n : "))
+    x = [n] * n
+    f = [n] * n
+    g = [n] * n
+    h = [n] * n
+
+    for i in range(n):
+        x[i] = int(input(f"input nilai x {i+1}: "))
+        if x[i] >= 0:
+            f[i] = 3 * x[i]*x[i] + 7 * x[i] - 2
+        else:
+            f[i] = 2 * x[i]*x[i] - 5 * x[i] - 4
+        g[i] = f[i]*f[i] - math.sqrt(f[i])
+        h[i] = f[i] * g[i]
+
+    print("____________")
+    print("| No  | x | f(x) | g(x) | h(x) |")
+    print("|-----|---|------|------|------|")
+    
+    for i in range(n):
+        print("|  {:<3} | {:<2} | {:<5} | {:<5} | {:<5} |".format(i+1, x[i], f[i], g[i], h[i]))
+    
+    print("|-----|---|------|------|------|")
+    pilihan = input("Input nilai X lagi? (Y/N) ")
+
+
+
+
+
+
+
+
