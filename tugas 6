@@ -1,0 +1,74 @@
+nama   = 'Hanifa Aulia Kamal'
+nim    = 2310433024
+shift  = '2'
+print('Nama     : '+ nama)
+print('NIM      : ', nim)
+print('Shift    : '+ shift)
+
+print ("Data Nilai Ujian Mahasiswa")
+
+n = int(input("Jumlah Mahasiswa : "))
+m = int(input("Jumlah Mata Kuliah : "))
+
+nilai = []
+nama_mahasiswa = []
+nama_mata_kuliah =[]
+matakuliah=[]
+
+print("-------------------------------------Data Nilai Mahasiswa-----------------------------------")
+for j in range(m):
+    nama_mata_kuliah = (input(f"Nama Mata Kuliah {j+1}    : "))
+    matakuliah.append(nama_mata_kuliah)
+for i in range(n):
+    baris = []
+    print()
+    nama = (input(f"Nama Mahasiswa {i+1}  : "))
+    nama_mahasiswa.append(nama)
+    for h in range(m):
+        entri = int(input(f"Masukkan Nilai {matakuliah[h]}  : " ))
+        baris.append(entri)
+    nilai.append(baris)
+
+print()
+print("---------------------------------------------------------------------------------------------")
+print("|     Data Nilai Ujian Mahasiswa     |")
+print("---------------------------------------------------------------------------------------------")
+for i in range(n):
+    print("\t Nama \t", matakuliah[i])
+    print("No. |", end= "")
+
+
+print("----------------------------------------------------------------------------------------------")
+
+for i in range(n):
+    print("\t", nama, "\t", nilai[i])
+
+print("----------------------------------------------------------------------------------------------")
+
+
+ratarata_nilai = []
+
+for i in range(m):
+    totalnilai = sum(nilai[i])
+    ratarata = totalnilai / m
+    ratarata_nilai.append(ratarata)
+
+for i in range(n):
+    print("Rata-Rata",nama, " : " ,ratarata_nilai[i])
+print()
+
+nilaitertinggi = nilai[0]
+nilaiterendah = nilai[0]
+namatertinggi = nama[0]
+namaterendah = nama[0]
+
+for i in range(n):
+    nilaitertinggi = max(nilai[i]) 
+    nilaiterendah = min(nilai[i])
+    namatertinggi = nama[i]
+    namaterendah = nama[i]
+    print("Nilai Tertinggi" ,matakuliah[i], ":", nilaitertinggi, "adalah", namatertinggi)
+    print("Nilai Terendah" ,matakuliah[i], ":" ,nilaiterendah, "adalah", namaterendah)
+    print()
+
+print("---------------------------------------------------------------------------------------------")
